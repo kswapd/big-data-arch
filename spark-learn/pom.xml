@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.dcits</groupId>
+  <artifactId>spark-learn</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>spark-learn</name>
+  <url>http://maven.apache.org</url>
+  <description>Zipkin Dependencies (Parent)</description>
+  <inceptionYear>2016</inceptionYear>
+
+  <parent>
+        
+        <groupId>com.dcits</groupId>
+        <artifactId>big-data-arch</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../</relativePath> <!-- lookup parent from repository -->
+    </parent>
+<organization>
+    <name>OpenZipkin</name>
+    <url>https://zipkin.io/</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/openzipkin/zipkin-dependencies</url>
+    <connection>scm:git:https://github.com/openzipkin/zipkin-dependencies.git</connection>
+    <developerConnection>scm:git:https://github.com/openzipkin/zipkin-dependencies.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <!-- Developer section is needed for Maven Central, but doesn't need to include each person -->
+  <developers>
+    <developer>
+      <id>openzipkin</id>
+      <name>OpenZipkin Gitter</name>
+      <url>https://gitter.im/openzipkin/zipkin</url>
+    </developer>
+  </developers>
+
+
+  <distributionManagement>
+    <repository>
+      <id>bintray</id>
+      <url>https://api.bintray.com/maven/openzipkin/maven/zipkin-dependencies/;publish=1</url>
+    </repository>
+    <snapshotRepository>
+      <id>jfrog-snapshots</id>
+      <url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <issueManagement>
+    <system>Github</system>
+    <url>https://github.com/openzipkin/zipkin-dependencies/issues</url>
+  </issueManagement>
+
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+
+    <main.basedir>${project.basedir}</main.basedir>
+
+    <!-- override to set exclusions per-project -->
+    <errorprone.args />
+    <errorprone.version>2.3.3</errorprone.version>
+
+    <!-- can't switch to 2.12 until spark-cassandra-connector updates -->
+    <scala.binary.version>2.11</scala.binary.version>
+    <spark.version>2.4.3</spark.version>
+
+    <zipkin.version>2.16.0</zipkin.version>
+    <armeria.version>0.90.0</armeria.version>
+
+    <junit.version>4.12</junit.version>
+    <assertj.version>3.13.2</assertj.version>
+    <jackson.version>2.9.9</jackson.version>
+    <!-- connector uses an old version of the driver -->
+    <cassandra-driver-core.version>3.7.2</cassandra-driver-core.version>
+    <spark-cassandra-connector.version>2.4.1</spark-cassandra-connector.version>
+    <testcontainers.version>1.12.0</testcontainers.version>
+  </properties>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+
+    <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+    <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-core_${scala.binary.version}</artifactId>
+        <version>${spark.version}</version>
+    </dependency>
+
+
+
+
+
+  </dependencies>
+
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.encoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <descriptors>
+                                <descriptor>src/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
+
+
