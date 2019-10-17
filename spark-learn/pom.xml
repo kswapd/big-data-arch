@@ -112,7 +112,11 @@
         <artifactId>spark-core_${scala.binary.version}</artifactId>
         <version>${spark.version}</version>
     </dependency>
-
+  <dependency>
+      <groupId>org.elasticsearch</groupId>
+      <artifactId>elasticsearch-spark-20_${scala.binary.version}</artifactId>
+      <version>7.4.0</version>
+    </dependency>
 
 
 
