@@ -22,8 +22,14 @@ public class App
         SparkES ses = new SparkES();
         ses.init();
        // ses.sparkTest();
-        ses.queryES();
+        //ses.queryES();
+       // ses.queryZipkin();
+
         //ses.saveToES();
+        //ses.saveToESStreaming();
+       //ses.saveToESBySql();
+        //ses.queryESBySql();
+        ses.queryZipkin();
     }
 }
 
