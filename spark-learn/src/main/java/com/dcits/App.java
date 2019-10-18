@@ -29,7 +29,7 @@ public class App
         //ses.saveToESStreaming();
        //ses.saveToESBySql();
         //ses.queryESBySql();
-        ses.queryZipkin();
+        ses.queryZipkinHttp();
     }
 }
 
