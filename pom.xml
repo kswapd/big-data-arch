@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
     <modelVersion>4.0.0</modelVersion>
 
@@ -11,7 +10,7 @@
 	<description>Bill Of Materials POM for all Oms artifacts</description>
 	<url>http://10.7.20.144/pftemp/pre-back/oms.git</url>
 	<inceptionYear>2019</inceptionYear>
-	<name>oms</name>
+	<name>big-data</name>
 
 	<organization>
 		<name>OMS</name>
@@ -103,23 +102,10 @@
 
 
 	<modules>
-		<module>gateway</module>
-		<module>auth</module>
-		<module>demo</module>
-		<module>log-server</module>
-		<module>alarm</module>
-		<module>deploy</module>
-		<module>eureka</module>
-		<module>monitor-server</module>
-		<module>businessMonitor-server</module>
-		<module>operation</module>
-		<module>apollo</module>
-		<module>governance</module>
-		<module>agent</module>
-		<module>databaseMonitor</module>
-		<module>admin</module>
-		<module>oms-bom</module>
-	</modules>
+		<module>spark-learn</module>
+		
+	  <module>scala-spark</module>
+  </modules>
 
 
 
