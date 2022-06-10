@@ -35,7 +35,7 @@
 		<galaxy-dubbo.version>2.3.2</galaxy-dubbo.version>
 		<poi.version>3.9</poi.version>
 		<jfinal.version>3.5</jfinal.version>
-		<dubbo.version>2.6.2</dubbo.version>
+		<dubbo.version>2.6.12</dubbo.version>
 		<esper.version>7.1.0</esper.version>
 		<spring-security-oauth2.version>2.3.3.RELEASE</spring-security-oauth2.version>
 		<spring-security-oauth2-autoconfigure.version>2.0.6.RELEASE</spring-security-oauth2-autoconfigure.version>
