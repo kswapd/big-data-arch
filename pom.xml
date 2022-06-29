@@ -33,7 +33,7 @@
 		<annotations.version>1.5.20</annotations.version>
 		<ganymed-ssh2.version>262</ganymed-ssh2.version>
 		<galaxy-dubbo.version>2.3.2</galaxy-dubbo.version>
-		<poi.version>3.9</poi.version>
+		<poi.version>4.1.1</poi.version>
 		<jfinal.version>3.5</jfinal.version>
 		<dubbo.version>2.6.2</dubbo.version>
 		<esper.version>7.1.0</esper.version>
